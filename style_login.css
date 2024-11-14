@@ -1,0 +1,127 @@
+:root{
+    --primary: #AE0000;
+    --font: #ffffff;
+}
+body{
+    background-image: url('img/bg1.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 500px;
+    margin: 15% auto 5% auto; /* Mengatur margin atas 8%, bawah 5%, dan kiri-kanan auto */
+    background-color: rgba(40, 40, 40, 0.599) ; /* Mengatur latar belakang transparan */
+    display: flex;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    align-content: center;
+    position: relative;
+}
+.close-icon {
+    position: absolute;
+    top: 10px; /* Sesuaikan posisi vertikal */
+    right: 10px; /* Sesuaikan posisi horizontal */
+    cursor: pointer;
+    color: var(--font);
+    font-size: 24px;
+}
+.close-icon:hover{
+    color: var(--primary);
+}
+form{
+    margin: 5% auto;
+    padding: 2rem 1rem;
+}
+label{
+    color: var(--font);
+    text-align: left;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 2.5rem;
+    color: var(--font);
+    margin-bottom: 3rem;
+}
+
+input{
+    width: 85%;
+    font-size: 1rem;
+    height: 22px;
+    outline: none;
+    border: 2px solid #cacaca;
+    border-radius: 20px;
+    padding: 12px 20px;
+    background-color: var(--font);
+    margin-bottom: 15px;
+}
+
+.jenis_kelamin {
+    margin-bottom: 15px;
+    color: var(--font);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.jenis_kelamin label{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 35px;
+}
+
+.jenis_kelamin .flex{
+    display: flex;
+}
+
+.jenis_kelamin .flex input{
+    cursor: pointer;
+}
+
+button{
+    font-size: 1rem;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 95%;
+    color:var(--font);
+    cursor: pointer;
+    background: #982e2e;
+}
+
+button:hover{
+    background: var(--primary);
+}
+
+input:focus{
+    border: 2px solid var(--primary);
+    box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.24);
+}
+
+.remainder{
+    text-align: left;
+    padding-left: 1rem;
+    color: var(--font);
+    margin-top: 5px;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.member{
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #ffffffba;
+}
+    
+a{
+    color: var(--font);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: var(--primary);
+}

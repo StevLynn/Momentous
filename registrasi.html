@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_login.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <div class="container">
+            <a href="#"><i class="fas fa-times close-icon"></i></a>
+            <div class="right-container">
+                <form method="POST" action="Registration.php">
+                    <h2>Registration</h2>
+                    <input type="email" class="email" id="email" name="email" placeholder="Email"/>
+                    <input type="text" name="nama" id="nama" placeholder="Masukkan Nama" size="5"/>
+                    <input type="number" id="no_hp" name="no_hp" placeholder="No Hp" />
+                    <input type="password" class="password" id="password" name="password1" placeholder="Password"/>
+                    <input type="password" class="password" id="password-konfir" name="password1" placeholder="Confirm Password"/>
+                    <button type="submit" id="sign-up" name="sign-up">Sign Up</button>
+                    <div class="member">Not a member?
+                        <a href="login.html">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
