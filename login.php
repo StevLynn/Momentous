@@ -22,11 +22,11 @@
 
         if ($stmt_user->fetch() && password_verify($password, $hashed_password_user)) {
             $_SESSION['username'] = $db_username_user;
-            header("Location: Home.php");
+            header("Location: dashboard_user.php");
             exit();
         } elseif ($stmt_admin->fetch() && $password == $password_admin) {
             $_SESSION['username'] = $db_username_admin;
-            header("Location: Dashboard_admin.php");
+            header("Location: dashboard_manager.php");
             exit();
         } else {
             echo "Username atau password salah.";

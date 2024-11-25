@@ -1,28 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style_login.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <title>Sign Up</title>
-    </head>
-    <body>
-        <div class="container">
-            <a href="#"><i class="fas fa-times close-icon"></i></a>
-            <div class="right-container">
-                <form method="POST" action="Registration.php">
-                    <h2>Registration</h2>
-                    <input type="email" class="email" id="email" name="email" placeholder="Email"/>
-                    <input type="text" name="nama" id="nama" placeholder="Masukkan Nama" size="5"/>
-                    <input type="number" id="no_hp" name="no_hp" placeholder="No Hp" />
-                    <input type="password" class="password" id="password" name="password1" placeholder="Password"/>
-                    <input type="password" class="password" id="password-konfir" name="password1" placeholder="Confirm Password"/>
-                    <button type="submit" id="sign-up" name="sign-up">Sign Up</button>
-                    <div class="member">Not a member?
-                        <a href="login.html">Login</a>
-                    </div>
-                </form>
-            </div>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_login.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="close-icon"><i class="fas fa-times"></i></a>
+        <div class="right-container">
+            <form method="POST" action="registrasi.php" id="registration-form">
+                <h2>Registration</h2>
+
+                <!-- Email Input -->
+                <input type="email" class="email" id="email" name="email" placeholder="Email" required />
+                <span id="email-error" style="color: red; display: none;">Email sudah terdaftar!</span>
+
+                <!-- Nama Input -->
+                <input type="text" name="nama" id="nama" placeholder="Masukkan Nama" required />
+
+                <!-- No HP Input -->
+                <input type="tel" id="no_hp" name="no_hp" placeholder="No Hp" pattern="^0\d{9,12}$" 
+                       title="Nomor HP harus diawali dengan 0 dan terdiri dari 9 hingga 12 digit" required />
+
+                <!-- Password Input -->
+                <input type="password" class="password" id="password" name="password1" placeholder="Password" required />
+
+                <!-- Confirm Password Input -->
+                <input type="password" class="password" id="password-konfir" name="password2" placeholder="Confirm Password" required 
+                       oninput="checkPasswordMatch()" />
+
+                <!-- Password Mismatch Alert -->
+                <span id="password-error" style="color: red; display: none;">Password tidak cocok!</span>
+
+                <button type="submit" id="sign-up" name="sign-up">Sign Up</button>
+
+                <div class="member">Already a member?
+                    <a href="login.html">Login</a>
+                </div>
+            </form>
         </div>
-    </body>
+    </div>
+
+    <script>
+        // Fungsi untuk memeriksa kecocokan password
+        function checkPasswordMatch() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("password-konfir").value;
+            const errorMessage = document.getElementById("password-error");
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = "inline"; // Menampilkan pesan error
+            } else {
+                errorMessage.style.display = "none"; // Menyembunyikan pesan error
+            }
+        }
+
+        // Memeriksa apakah email sudah terdaftar secara real-time menggunakan AJAX
+        document.getElementById("email").addEventListener("blur", function() {
+            const email = this.value;
+
+            // Hanya kirim request jika email tidak kosong
+            if (email !== "") {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "cek_email.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Jika email sudah terdaftar
+                        if (xhr.responseText === "exists") {
+                            document.getElementById("email-error").style.display = "inline";
+                        } else {
+                            document.getElementById("email-error").style.display = "none";
+                        }
+                    }
+                };
+
+                // Kirim email ke server
+                xhr.send("email=" + encodeURIComponent(email));
+            }
+        });
+    </script>
+</body>
 </html>
