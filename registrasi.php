@@ -2,14 +2,13 @@
     include 'connection.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['username'];
         $email = $_POST['email'];
         $nama = $_POST['nama'];
         $no_hp = $_POST['no_hp'];
         $password = password_hash($_POST['password1'], PASSWORD_DEFAULT);
     
-        $sql = "INSERT INTO data_user (username, email, nama, no_hp, tempat_lahir, tanggal_lahir, password)
-                VALUES ('$username', '$email', '$nama', '$no_hp', '$tempat_lahir', '$tanggal_lahir', '$password')";
+        $sql = "INSERT INTO data_user (email, nama, no_hp, password)
+                VALUES ('$email', '$nama', '$no_hp', '$password')";
     
         if ($conn->query($sql) === TRUE) {
             echo "Registrasi berhasil";
@@ -19,5 +18,6 @@
         }
     
         $conn->close();
+
     }
 ?>
