@@ -70,6 +70,12 @@ footer{
     margin-left: 350px;
 }
 
+.box{
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    padding: 30px;
+}
+
 .social{
     font-size: 25px;
 }
