@@ -1,0 +1,44 @@
+:root{
+    --primary: #F9720A;
+    --font: #000;
+}
+
+body{
+    background-size: cover;
+    font-family: Jacques Francois;
+    font-size: 18px;
+}
+
+header{
+    box-shadow: 0 0 30px #a6a6a6c2;
+    border-bottom: 5px solid #fff;
+}
+
+.font-logo{
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--font);
+}
+
+.font-size-header{
+    font-size: 20px;
+}
+
+.font-color{
+    color: var(--font);
+}
+
+.font-color:hover{
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+.btn-outline-primary{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-primary:hover{
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
