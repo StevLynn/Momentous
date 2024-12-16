@@ -12,6 +12,11 @@ body{
 header{
     box-shadow: 0 0 30px #a6a6a6c2;
     border-bottom: 5px solid #fff;
+    background-color: #fff;
+}
+
+footer{
+    background-color: #666666;
 }
 
 .font-logo{
@@ -41,4 +46,16 @@ header{
 .btn-outline-primary:hover{
     background: var(--primary);
     border: 1px solid var(--primary);
+}
+
+.text-body-secondary{
+    color: #fff;
+}
+
+.social{
+    font-size: 25px;
+}
+
+.social:hover{
+    color: var(--primary);
 }
