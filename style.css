@@ -38,6 +38,14 @@ footer{
     color: var(--primary);
 }
 
+.bold{
+    font-weight: bolder;
+}
+
+.text-body-secondary{
+    color: #fff;
+}
+
 .btn-outline-primary{
     border: 1px solid var(--primary);
     color: var(--primary);
@@ -48,8 +56,18 @@ footer{
     border: 1px solid var(--primary);
 }
 
-.text-body-secondary{
-    color: #fff;
+.btn-primary{
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover{
+    background-color: #af4c00;
+    border: 1px solid #af4c00;
+}
+
+.form{
+    margin-left: 350px;
 }
 
 .social{
