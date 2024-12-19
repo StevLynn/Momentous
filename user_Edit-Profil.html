@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Booking</title>
+    <title>Edit Profil</title>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,10 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <a href="user_Edit-Profil.html"><button type="button" class="btn btn-outline-primary hover">Login</button></a>
+                <ul class="nav align-items-center justify-content-center">
+                    <li><a class="p-4 user social" href="user_Profil.html"><i class="fa-solid fa-user"></i></a></li>
+                    <li><button type="button" class="btn btn-primary">Logout</button></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -32,41 +35,30 @@
     <main>
         <div class="container py-5">
             <form class="container card mb-5 p-5 col-lg-8">
-                <h3 class="text-center py-3 bold">Booking</h3>
-                <h5 class="text-center">"Silakan konsultasi terlebih dahulu sebelum melakukan pemesanan melalui situs web dengan menghubungi WhatsApp yang tercantum di bawah ini."</h5>
-                <a href="#" class="nav-link font-size-header text-center font-color mb-5">08123456789</a>
+                <h3 class="text-center py-3 bold">Edit Profil</h3>
                 <div class="mb-3 col-12">
                     <label for="validationDefault01" class="form-label">Name</label>
                     <input type="text" class="form-control" id="validationDefault01" required>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="validationDefault04" class="form-label">Category</label>
-                    <select class="form-select" id="validationDefault04" required>
-                        <option selected disabled value="">Choose category</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                    </select>
+                    <label for="validationDefault02" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="validationDefault02" placeholder="name@example.com" required>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="validationDefault02" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="validationDefault02" required>
+                    <label for="validationDefault03" class="form-label">No Hp</label>
+                    <input type="number" class="form-control" id="validationDefault03" required>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="validationDefault03" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="validationDefault03" required>
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password1" required/>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="password-konfir" name="password1" required/>
                 </div>
-                <div class="mb-3">
-                    <label for="validationTextarea" class="form-label">Messege</label>
-                    <textarea class="form-control" id="validationTextarea" rows="3" required></textarea>
-                </div>
-                <div class="mb-3 d-grid col-6">
-                    <button type="submit" class="btn btn-primary">Booking</button>
+                <div class="mb-3 p-2 row g-3">
+                    <button type="submit" class="col-md-6 btn btn-primary">Submit</button>
+                    <button type="submit" class="col-md-6 btn btn-outline-primary">Cancel</button>
                 </div>
             </form>
         </div>

@@ -76,8 +76,12 @@ footer{
     padding: 30px;
 }
 
+.user{
+    color: #000;
+}
+
 .social{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .social:hover{
